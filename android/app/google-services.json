@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "512282411888",
+    "project_id": "grosirmart-f9e28",
+    "storage_bucket": "grosirmart-f9e28.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:512282411888:android:1c56c35f0e2e2701fb85b5",
+        "android_client_info": {
+          "package_name": "com.example.grosir_mart"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCE73qB3PPbH-3KT1Cg5IPI1YPOSBjUk2Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
