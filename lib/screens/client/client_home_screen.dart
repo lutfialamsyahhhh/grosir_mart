@@ -364,7 +364,7 @@ class ClientHomeScreen extends StatelessWidget {
                   padding: const EdgeInsets.all(16),
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
-                    childAspectRatio: 0.68,
+                    mainAxisExtent: 310,
                     crossAxisSpacing: 12,
                     mainAxisSpacing: 12,
                   ),
@@ -447,7 +447,7 @@ class ClientHomeScreen extends StatelessWidget {
                                         ),
                                       ],
                                     ),
-                                    const Spacer(),
+                                    const SizedBox(height: 6),
                                     Text(
                                       currency.format(product.price),
                                       style: const TextStyle(
@@ -459,14 +459,13 @@ class ClientHomeScreen extends StatelessWidget {
                                     const SizedBox(height: 8),
                                     SizedBox(
                                       width: double.infinity,
+                                      height: 40,
                                       child: ElevatedButton.icon(
                                         style: ElevatedButton.styleFrom(
                                           backgroundColor: Colors.blueAccent,
                                           foregroundColor: Colors.white,
                                           elevation: 0,
-                                          padding: const EdgeInsets.symmetric(
-                                            vertical: 10,
-                                          ),
+                                          padding: EdgeInsets.zero,
                                           shape: RoundedRectangleBorder(
                                             borderRadius: BorderRadius.circular(8),
                                           ),
@@ -501,7 +500,7 @@ class ClientHomeScreen extends StatelessWidget {
                                             ),
                                           );
                                         },
-                                        icon: const Icon(Icons.add_shopping_cart, size: 18),
+                                        icon: const Icon(Icons.add_shopping_cart, size: 15),
                                         label: const Text(
                                           "Tambah",
                                           style: TextStyle(fontWeight: FontWeight.bold),

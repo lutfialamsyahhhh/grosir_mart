@@ -72,7 +72,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             shape: BoxShape.circle,
                             boxShadow: [
                               BoxShadow(
-                                color: Colors.black.withOpacity(0.1),
+                                color: Colors.black.withValues(alpha: 0.1),
                                 blurRadius: 20,
                                 spreadRadius: 5,
                               ),
@@ -99,7 +99,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           "Isi data di bawah untuk mendaftar",
                           style: TextStyle(
                             fontSize: 14,
-                            color: Colors.white.withOpacity(0.9),
+                            color: Colors.white.withValues(alpha: 0.9),
                           ),
                         ),
                         const SizedBox(height: 32),
@@ -112,7 +112,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             borderRadius: BorderRadius.circular(20),
                             boxShadow: [
                               BoxShadow(
-                                color: Colors.black.withOpacity(0.1),
+                                color: Colors.black.withValues(alpha: 0.1),
                                 blurRadius: 20,
                                 offset: Offset(0, 10),
                               ),

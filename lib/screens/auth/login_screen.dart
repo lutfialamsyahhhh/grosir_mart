@@ -52,7 +52,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         shape: BoxShape.circle,
                         boxShadow: [
                           BoxShadow(
-                            color: Colors.black.withOpacity(0.1),
+                            color: Colors.black.withValues(alpha: 0.1),
                             blurRadius: 20,
                             spreadRadius: 5,
                           ),
@@ -81,7 +81,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       "Selamat Datang Kembali",
                       style: TextStyle(
                         fontSize: 16,
-                        color: Colors.white.withOpacity(0.9),
+                        color: Colors.white.withValues(alpha: 0.9),
                       ),
                     ),
                     const SizedBox(height: 40),
@@ -94,7 +94,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         borderRadius: BorderRadius.circular(20),
                         boxShadow: [
                           BoxShadow(
-                            color: Colors.black.withOpacity(0.1),
+                            color: Colors.black.withValues(alpha: 0.1),
                             blurRadius: 20,
                             offset: Offset(0, 10),
                           ),
@@ -296,7 +296,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         text: TextSpan(
                           text: "Belum punya akun? ",
                           style: TextStyle(
-                            color: Colors.white.withOpacity(0.9),
+                            color: Colors.white.withValues(alpha: 0.9),
                             fontSize: 14,
                           ),
                           children: [

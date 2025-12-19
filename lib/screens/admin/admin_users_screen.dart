@@ -145,7 +145,7 @@ class AdminUsersScreen extends StatelessWidget {
           children: [
             // Header dengan statistik
             Container(
-              padding: const EdgeInsets.all(16),
+              padding: const EdgeInsets.all(20),
               decoration: BoxDecoration(
                 color: Colors.white,
                 boxShadow: [
@@ -162,11 +162,11 @@ class AdminUsersScreen extends StatelessWidget {
                   const Text(
                     'Manajemen Pendaftar',
                     style: TextStyle(
-                      fontSize: 20,
+                      fontSize: 22,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  const SizedBox(height: 12),
+                  const SizedBox(height: 16),
                   Row(
                     children: [
                       Expanded(
@@ -177,7 +177,7 @@ class AdminUsersScreen extends StatelessWidget {
                           Icons.pending_actions,
                         ),
                       ),
-                      const SizedBox(width: 8),
+                      const SizedBox(width: 10),
                       Expanded(
                         child: _buildStatCard(
                           'Diterima',
@@ -186,7 +186,7 @@ class AdminUsersScreen extends StatelessWidget {
                           Icons.check_circle,
                         ),
                       ),
-                      const SizedBox(width: 8),
+                      const SizedBox(width: 10),
                       Expanded(
                         child: _buildStatCard(
                           'Ditolak',
@@ -233,7 +233,7 @@ class AdminUsersScreen extends StatelessWidget {
                   }
 
                   return Container(
-                    margin: const EdgeInsets.only(bottom: 12),
+                    margin: const EdgeInsets.only(bottom: 14),
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(15),
@@ -246,7 +246,7 @@ class AdminUsersScreen extends StatelessWidget {
                       ],
                     ),
                     child: Padding(
-                      padding: const EdgeInsets.all(16),
+                      padding: const EdgeInsets.all(18),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -254,8 +254,8 @@ class AdminUsersScreen extends StatelessWidget {
                             children: [
                               // Avatar
                               Container(
-                                width: 60,
-                                height: 60,
+                                width: 64,
+                                height: 64,
                                 decoration: BoxDecoration(
                                   gradient: LinearGradient(
                                     colors: [
@@ -267,13 +267,13 @@ class AdminUsersScreen extends StatelessWidget {
                                   ),
                                   borderRadius: BorderRadius.circular(15),
                                 ),
-                                child: Icon(
+                                child: const Icon(
                                   Icons.store,
                                   color: Colors.white,
-                                  size: 30,
+                                  size: 32,
                                 ),
                               ),
-                              const SizedBox(width: 12),
+                              const SizedBox(width: 14),
 
                               // Info
                               Expanded(
@@ -318,8 +318,8 @@ class AdminUsersScreen extends StatelessWidget {
                               // Status badge
                               Container(
                                 padding: const EdgeInsets.symmetric(
-                                  horizontal: 12,
-                                  vertical: 6,
+                                  horizontal: 14,
+                                  vertical: 8,
                                 ),
                                 decoration: BoxDecoration(
                                   color: statusColor.withValues(alpha: 0.1),
@@ -334,14 +334,14 @@ class AdminUsersScreen extends StatelessWidget {
                                   children: [
                                     Icon(
                                       statusIcon,
-                                      size: 16,
+                                      size: 17,
                                       color: statusColor,
                                     ),
-                                    const SizedBox(width: 4),
+                                    const SizedBox(width: 5),
                                     Text(
                                       statusText,
                                       style: TextStyle(
-                                        fontSize: 12,
+                                        fontSize: 13,
                                         fontWeight: FontWeight.w600,
                                         color: statusColor,
                                       ),
@@ -354,9 +354,9 @@ class AdminUsersScreen extends StatelessWidget {
 
                           // Tampilkan tombol aksi HANYA jika status masih pending
                           if (status == 'pending') ...[
-                            const SizedBox(height: 12),
+                            const SizedBox(height: 14),
                             const Divider(height: 1),
-                            const SizedBox(height: 12),
+                            const SizedBox(height: 14),
                             Row(
                               children: [
                                 Expanded(
@@ -372,7 +372,7 @@ class AdminUsersScreen extends StatelessWidget {
                                       backgroundColor: Colors.green,
                                       foregroundColor: Colors.white,
                                       padding: const EdgeInsets.symmetric(
-                                        vertical: 12,
+                                        vertical: 14,
                                       ),
                                       shape: RoundedRectangleBorder(
                                         borderRadius: BorderRadius.circular(10),
@@ -381,17 +381,18 @@ class AdminUsersScreen extends StatelessWidget {
                                     ),
                                     icon: const Icon(
                                       Icons.check_circle_outline,
-                                      size: 20,
+                                      size: 21,
                                     ),
                                     label: const Text(
                                       'Terima',
                                       style: TextStyle(
                                         fontWeight: FontWeight.w600,
+                                        fontSize: 14,
                                       ),
                                     ),
                                   ),
                                 ),
-                                const SizedBox(width: 8),
+                                const SizedBox(width: 10),
                                 Expanded(
                                   child: ElevatedButton.icon(
                                     onPressed: () => _showConfirmDialog(
@@ -405,7 +406,7 @@ class AdminUsersScreen extends StatelessWidget {
                                       backgroundColor: Colors.red,
                                       foregroundColor: Colors.white,
                                       padding: const EdgeInsets.symmetric(
-                                        vertical: 12,
+                                        vertical: 14,
                                       ),
                                       shape: RoundedRectangleBorder(
                                         borderRadius: BorderRadius.circular(10),
@@ -414,12 +415,13 @@ class AdminUsersScreen extends StatelessWidget {
                                     ),
                                     icon: const Icon(
                                       Icons.cancel_outlined,
-                                      size: 20,
+                                      size: 21,
                                     ),
                                     label: const Text(
                                       'Tolak',
                                       style: TextStyle(
                                         fontWeight: FontWeight.w600,
+                                        fontSize: 14,
                                       ),
                                     ),
                                   ),
@@ -448,7 +450,7 @@ class AdminUsersScreen extends StatelessWidget {
     IconData icon,
   ) {
     return Container(
-      padding: const EdgeInsets.all(12),
+      padding: const EdgeInsets.all(14),
       decoration: BoxDecoration(
         color: color.withValues(alpha: 0.1),
         borderRadius: BorderRadius.circular(12),
@@ -459,21 +461,21 @@ class AdminUsersScreen extends StatelessWidget {
       ),
       child: Column(
         children: [
-          Icon(icon, color: color, size: 24),
-          const SizedBox(height: 6),
+          Icon(icon, color: color, size: 26),
+          const SizedBox(height: 8),
           Text(
             value,
             style: TextStyle(
-              fontSize: 20,
+              fontSize: 22,
               fontWeight: FontWeight.bold,
               color: color,
             ),
           ),
-          const SizedBox(height: 2),
+          const SizedBox(height: 4),
           Text(
             label,
             style: TextStyle(
-              fontSize: 11,
+              fontSize: 12,
               color: Colors.grey[700],
               fontWeight: FontWeight.w500,
             ),

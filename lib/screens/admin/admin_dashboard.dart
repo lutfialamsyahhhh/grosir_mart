@@ -111,71 +111,80 @@ class AdminDashboard extends StatelessWidget {
               ),
             ],
           ),
-          bottom: PreferredSize(
-            preferredSize: const Size.fromHeight(60),
-            child: Container(
-              decoration: BoxDecoration(
-                color: Colors.white.withValues(alpha: 0.1),
-                borderRadius: const BorderRadius.only(
-                  topLeft: Radius.circular(20),
-                  topRight: Radius.circular(20),
-                ),
-              ),
-              child: TabBar(
-                labelColor: Colors.white,
-                unselectedLabelColor: Colors.white60,
-                indicatorSize: TabBarIndicatorSize.tab,
-                indicator: BoxDecoration(
-                  color: Colors.white.withValues(alpha: 0.2),
-                  borderRadius: BorderRadius.circular(15),
-                ),
-                labelStyle: const TextStyle(
-                  fontSize: 13,
-                  fontWeight: FontWeight.w600,
-                ),
-                unselectedLabelStyle: const TextStyle(
-                  fontSize: 13,
-                  fontWeight: FontWeight.normal,
-                ),
-                padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                tabs: [
-                  Tab(
-                    height: 45,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        const Icon(Icons.people, size: 20),
-                        const SizedBox(width: 8),
-                        const Text("Kelola User"),
-                      ],
-                    ),
+            bottom: PreferredSize(
+              preferredSize: const Size.fromHeight(60),
+              child: Container(
+                decoration: BoxDecoration(
+                  color: Colors.white.withValues(alpha: 0.1),
+                  borderRadius: const BorderRadius.only(
+                    topLeft: Radius.circular(20),
+                    topRight: Radius.circular(20),
                   ),
-                  Tab(
-                    height: 45,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        const Icon(Icons.inventory_2, size: 20),
-                        const SizedBox(width: 8),
-                        const Text("Kelola Produk"),
-                      ],
-                    ),
+                ),
+                child: TabBar(
+                  // ❌ TANPA isScrollable
+                  labelColor: Colors.white,
+                  unselectedLabelColor: Colors.white60,
+                  indicatorSize: TabBarIndicatorSize.tab,
+                  indicator: BoxDecoration(
+                    color: Colors.white.withValues(alpha: 0.2),
+                    borderRadius: BorderRadius.circular(15),
                   ),
-                  Tab(
-                    height: 45,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        const Icon(Icons.shopping_cart, size: 20),
-                        const SizedBox(width: 8),
-                        const Text("Kelola Pesanan"),
-                      ],
-                    ),
+                  padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+                  labelStyle: const TextStyle(
+                    fontSize: 12,
+                    fontWeight: FontWeight.w600,
                   ),
-                ],
+                  unselectedLabelStyle: const TextStyle(
+                    fontSize: 12,
+                  ),
+                  tabs: const [
+                    Tab(
+                      height: 45,
+                      child: FittedBox(
+                        fit: BoxFit.scaleDown,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(Icons.people, size: 18),
+                            SizedBox(width: 4),
+                            Text("User"),
+                          ],
+                        ),
+                      ),
+                    ),
+                    Tab(
+                      height: 45,
+                      child: FittedBox(
+                        fit: BoxFit.scaleDown,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(Icons.inventory_2, size: 18),
+                            SizedBox(width: 4),
+                            Text("Produk"),
+                          ],
+                        ),
+                      ),
+                    ),
+                    Tab(
+                      height: 45,
+                      child: FittedBox(
+                        fit: BoxFit.scaleDown,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(Icons.shopping_cart, size: 18),
+                            SizedBox(width: 4),
+                            Text("Pesanan"),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
-          ),
           actions: [
             Container(
               margin: const EdgeInsets.only(right: 8),
@@ -223,8 +232,7 @@ class AdminDashboard extends StatelessWidget {
           ],
         ),
         body: Container(
-          de  ManageOrdersScreen(), // Tab 3: Kelola Pesanan
-            coration: const BoxDecoration(
+          decoration: const BoxDecoration(
             gradient: LinearGradient(
               colors: [Color(0xFFF5F7FA), Colors.white],
               begin: Alignment.topCenter,
@@ -235,6 +243,7 @@ class AdminDashboard extends StatelessWidget {
             children: [
               AdminUsersScreen(), // Tab 1: List User & Approval
               AdminProductsScreen(), // Tab 2: CRUD Produk
+              ManageOrdersScreen(), // Tab 3: Kelola Pesanan
             ],
           ),
         ),

@@ -8,7 +8,6 @@ import 'screens/splash/splash_screen.dart';
 // Import Provider yang sudah dibuat
 import 'providers/auth_provider.dart';
 import 'providers/cart_provider.dart';
-import 'screens/auth/login_screen.dart';
 
 
 void main() async {

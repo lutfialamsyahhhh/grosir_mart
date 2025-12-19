@@ -113,12 +113,13 @@ class CartScreen extends StatelessWidget {
                               foregroundColor: Colors.white,
                             ),
                             onPressed: () async {
-                              // Simpan Order ke Firestore
+                              // 1. Ambil Data User
                               final user = Provider.of<AuthProvider>(
                                 context,
                                 listen: false,
                               ).currentUser;
 
+                              // 2. Simpan Order ke Firestore (LOGIKA LAMA)
                               await FirebaseFirestore.instance
                                   .collection('orders')
                                   .add({
@@ -138,12 +139,32 @@ class CartScreen extends StatelessWidget {
                                     'createdAt': FieldValue.serverTimestamp(),
                                   });
 
-                              // Bersihkan keranjang & Info User
+                              // --- [LOGIKA BARU DIMULAI DI SINI] ---
+                              // 3. Update Stok Barang (Kurangi Stok)
+                              final firestore = FirebaseFirestore.instance;
+                              
+                              for (var item in cart.items) {
+                                try {
+                                  // Cari produk berdasarkan ID (item.id), lalu kurangi stoknya
+                                  await firestore
+                                      .collection('products') 
+                                      .doc(item.id) 
+                                      .update({
+                                        // Pastikan nama field di database Anda 'stock' atau 'stok'
+                                        'stock': FieldValue.increment(-item.qty),
+                                      });
+                                } catch (e) {
+                                  debugPrint("Gagal update stok barang ${item.name}: $e");
+                                }
+                              }
+                              // --- [LOGIKA BARU SELESAI] ---
+
+                              // 4. Bersihkan keranjang & Info User
                               cart.clearCart();
                               if (context.mounted) {
                                 ScaffoldMessenger.of(context).showSnackBar(
                                   const SnackBar(
-                                    content: Text("Order Berhasil!"),
+                                    content: Text("Order Berhasil & Stok Berkurang!"),
                                   ),
                                 );
                                 Navigator.pop(context);

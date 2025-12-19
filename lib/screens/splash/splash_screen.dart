@@ -87,11 +87,11 @@ class _SplashScreenState extends State<SplashScreen>
                         Container(
                           padding: const EdgeInsets.all(24),
                           decoration: BoxDecoration(
-                            color: Colors.white.withOpacity(0.2),
+                            color: Colors.white.withValues(alpha: 0.2),
                             shape: BoxShape.circle,
                             boxShadow: [
                               BoxShadow(
-                                color: Colors.black.withOpacity(0.2),
+                                color: Colors.black.withValues(alpha: 0.2),
                                 blurRadius: 20,
                                 spreadRadius: 5,
                               ),
@@ -116,7 +116,7 @@ class _SplashScreenState extends State<SplashScreen>
                             letterSpacing: 1.5,
                             shadows: [
                               Shadow(
-                                color: Colors.black.withOpacity(0.3),
+                                color: Colors.black.withValues(alpha: 0.3),
                                 offset: Offset(2, 2),
                                 blurRadius: 4,
                               ),
@@ -131,7 +131,7 @@ class _SplashScreenState extends State<SplashScreen>
                           'Belanja Grosir Jadi Mudah',
                           style: TextStyle(
                             fontSize: 14,
-                            color: Colors.white.withOpacity(0.9),
+                            color: Colors.white.withValues(alpha: 0.9),
                             letterSpacing: 0.5,
                           ),
                         ),
@@ -145,7 +145,7 @@ class _SplashScreenState extends State<SplashScreen>
                           child: CircularProgressIndicator(
                             strokeWidth: 3,
                             valueColor: AlwaysStoppedAnimation<Color>(
-                              Colors.white.withOpacity(0.8),
+                              Colors.white.withValues(alpha: 0.8),
                             ),
                           ),
                         ),
@@ -157,7 +157,7 @@ class _SplashScreenState extends State<SplashScreen>
                           'Memuat aplikasi...',
                           style: TextStyle(
                             fontSize: 12,
-                            color: Colors.white.withOpacity(0.7),
+                            color: Colors.white.withValues(alpha: 0.7),
                           ),
                         ),
                       ],
