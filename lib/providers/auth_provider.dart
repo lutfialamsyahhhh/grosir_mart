@@ -9,6 +9,7 @@ class AuthProvider with ChangeNotifier {
 
   UserModel? _currentUser;
   UserModel? get currentUser => _currentUser;
+  UserModel? get user => _currentUser;
 
   bool _isLoading = false;
   bool get isLoading => _isLoading;

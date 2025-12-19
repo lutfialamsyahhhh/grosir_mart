@@ -2,11 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:provider/provider.dart'; // Import Provider
 import 'firebase_options.dart';
+import 'screens/splash/splash_screen.dart';
+
 
 // Import Provider yang sudah dibuat
 import 'providers/auth_provider.dart';
 import 'providers/cart_provider.dart';
 import 'screens/auth/login_screen.dart';
+
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -34,7 +37,7 @@ class GrosirMartApp extends StatelessWidget {
           useMaterial3: true,
         ),
         // Nanti 'home' ini akan kita ganti ke halaman Login
-        home: const LoginScreen(),
+        home: const SplashScreen(),
       ),
     );
   }
